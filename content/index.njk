@@ -1,0 +1,33 @@
+---
+layout: layouts/home.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+numberOfLatestPostsToShow: 3
+---
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+
+<br />
+
+Welcome to the Bevendean Brighton Meditation Group!
+
+<br /><br />
+
+Please join us for sitting meditation - led by members of the Brighton Soto Zen group.
+
+<br /><br />
+
+From 6pm till 7pm every Wednesday at Holy Nativity Hall, Bevendean.
+
+<br /><br />
+
+Meditation sessions are structured but unguided.
+
+<br /><br />
+
+We sit upright in awareness of what is occurring at the time.
+
+<br /><br />
+
+If you are a first time sitter please arrive a few minutes early for help with sitting posture and instruction.

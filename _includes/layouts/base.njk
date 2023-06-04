@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<link rel="stylesheet" href="/css/index.css">
+		<link rel="stylesheet" href="/css/prism-diff.css">
+		<link rel="stylesheet" href="/css/prism-okaidia.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+
+		{#- Atom and JSON feeds included by default #}
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+
+		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
+		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
+
+		{% block script %}
+        {% if script %}
+            <script src="/javascript/{{ script }}"></script>
+        {% endif %}
+    {% endblock %}
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">{{ metadata.title }}</a>
+			<div class="social-links">
+      <a href="mailto:{{ metadata.email }}"><i class="fa fa-envelope-open"></i></a>
+      </div>
+		</header>
+
+		<main id="skip">
+			{{ content | safe }}
+		</main>
+
+		<footer>
+
+			<a href="mailto:{{ metadata.email }}" target="_blank">{{ metadata.email }}</a>
+		</footer>
+
+		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+	</body>
+</html>
+
